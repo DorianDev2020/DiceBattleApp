@@ -42,3 +42,10 @@ button {
     font-size: 20px;
     margin-bottom: 10px;
 }
+.body {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fvideohive.net%2Fitem%2Fbackground-in-the-style-of-the-wild-west%2F18643554&psig=AOvVaw14PD2ySabG6MbkR0hG56-a&ust=1582747365962000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNid8sq_7ecCFQAAAAAdAAAAABAO');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
