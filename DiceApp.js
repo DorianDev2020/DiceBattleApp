@@ -14,9 +14,9 @@ const button = document.querySelector("button");
         button.addEventListener("click", function () {
             let rolls = [roll(10),roll(10)];
             let temp;
-            if(rolls[0] == rolls[1]){ temp="Draw"; }
-            else if(rolls[0] > rolls[1]){ temp="Player 1 wins"; }
-            else { temp="Player 2 wins"; }
+            if(rolls[0] == rolls[1]){ temp="Draw"; }            //Start Game Dice Logic
+            else if(rolls[0] > rolls[1]){ temp="Player 1 wins"; } // Adjust Logic For 10 Players Here
+            else { temp="Player 2 wins"; }                      //End Game Dice logic
             updateOutput(player1,rolls[0]);
             updateOutput(player2,rolls[1]);
             updateOutput(player3,rolls[2]);
@@ -30,10 +30,10 @@ const button = document.querySelector("button");
             output.innerHTML = temp;
         })
         
-        function updateOutput(el,num){
+        function updateOutput(el,num){                      //Remove Method
             let holder = builder(num);
-            if(el.children[0]){el.children[0].remove();}
-            el.appendChild(holder);
+            if(el.children[0]){el.children[0].remove();}    //Edit So That Losing Players Are Removed
+            el.appendChild(holder);                          //Remove Method
         }
         
         function builder(num){
