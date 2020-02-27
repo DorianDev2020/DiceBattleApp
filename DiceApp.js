@@ -15,16 +15,16 @@ var counter;
 var playerArray = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10];
 
 function startGame(){
-    playerOne = {value: 0, name: "Maoki"};
-    playerTwo = {value: 0, name: "Zed"};
-    playerThree = {value: 0, name: "Shen"};
-    playerFour = {value: 0, name: "WarWick"};
-    playerFive = {value: 0, name: "Neeko"};
-    playerSix = {value: 0, name: "Heimerdinger"};
-    playerSeven = {value: 0, name: "NuNu & Willump"};
-    playerEight = {value: 0, name: "Lux"};
-    playerNine = {value: 0, name: "Garen"};
-    playerTen = {value: 0, name: "Xin Zhao"};
+    playerOne = {value: 0, name: "HighNoon Yasuo"};
+    playerTwo = {value: 0, name: "HighNoon Caitlyn"};
+    playerThree = {value: 0, name: "HighNoon Thresh"};
+    playerFour = {value: 0, name: "HighNoon Allistar"};
+    playerFive = {value: 0, name: "HighNoon Hecarim"};
+    playerSix = {value: 0, name: "Project: Yi"};
+    playerSeven = {value: 0, name: "Project: Vi"};
+    playerEight = {value: 0, name: "Project: Warwick"};
+    playerNine = {value: 0, name: "Project: Zed"};
+    playerTen = {value: 0, name: "Project: Jinx"};
 
     counter = 0;
 
