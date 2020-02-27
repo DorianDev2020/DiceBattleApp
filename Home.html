@@ -1,69 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Luck of The Draw</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Dice</title>
+    <link rel="stylesheet" type="text/css" href="Dice.css"></link>
 </head>
-<body>
-    <div class="gamearea">
-        <div class="output"><div > Roll the Dice??</div></div>
-            <div class="viewer">
-            <span class="namer">Player 1</span>
-            <span id="player1"></span>
-            </div>
-                <div class="viewer">
-                <span class="namer">Player 2</span>
-                <span id="player2"></span>
-                </div>
-                <div class="viewer">
-                <span class="namer">Player 3</span>
-                <span id="player3"></span>
-                </div>
-                <div class="viewer">
-                    <span class="namer">Player 4</span>
-                    <span id="player4"></span>
+
+<body class="centerTable">
+    
+    <style>
+        body {
+        background-image: url('https://videohive.img.customer.envatousercontent.com/files/212766804/590_300_S_1.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=ebf274bddae8d74e1bd7df675c06df40');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        }
+        </style>
+
+    <script src="Dice.js"></script>
+        <center>
+            <div class="creamBackground">
+                <header>
+                    <h2>
+                        Welcome to Luck Of The Draw, Partner!
+                    </h2>
+                </header>
+                <button class="topBottomMargin" onclick="startGame()">Click To Start A New Game</button> ||| |||
+                <button class="topBottomMargin" onclick="playRound()">Click To Start Next Round</button>
+                
+                <div>
+                    <div id="rounds" class="bold">
+                        
                     </div>
-                    <div class="viewer">
-                        <span class="namer">Player 5</span>
-                        <span id="player5"></span>
-                        </div>
-                        <div class="viewer">
-                            <span class="namer">Player 6</span>
-                            <span id="player6"></span>
+                </div>
+            </div>
+        
+                        <td>
+                            <div id=0>
                             </div>
-                            <div class="viewer">
-                                <span class="namer">Player 7</span>
-                                <span id="player7"></span>
-                                </div>
-                                <div class="viewer">
-                                    <span class="namer">Player 8</span>
-                                    <span id="player8"></span>
-                                    </div>
-                                    <div class="viewer">
-                                        <span class="namer">Player 9</span>
-                                        <span id="player9"></span>
-                                        </div>
-                                        <div class="viewer">
-                                            <span class="namer">Player 10</span>
-                                            <span id="player10"></span>
-                                            </div>
-                                              </div>
-                                                 <button type="button">Roll</button>
-
-       
-                                                 <style>
-                                                    body {
-                                                    background-image: url('https://videohive.img.customer.envatousercontent.com/files/212766804/590_300_S_1.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=ebf274bddae8d74e1bd7df675c06df40');
-                                                    background-size: 100% 100%;
-                                                    background-repeat: no-repeat;
-                                                    background-attachment: fixed;
-                                                    background-position: center;
-                                                    }
-                                                    </style>
-
-<script src="DiceApp.js"></script> 
+                        </td>
+                        <td>
+                            <div id=1>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=2>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=3>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=4>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=5>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=6>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=7>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=8>
+                            </div>
+                        </td>
+                        <td>
+                            <div id=9>
+                            </div>
+                        </td>
+                    
+                </tr>
+                <tr class="bold">
+                    <td>
+                        <div id=0d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=1d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=2d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=3d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=4d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=5d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=6d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=7d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=8d>
+                        </div>
+                    </td>
+                    <td>
+                        <div id=9d>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
 </body>
-</html>
