@@ -1,59 +1,115 @@
-const button = document.querySelector("button");
-        const output = document.querySelector(".output");
-        const player1 = document.querySelector("#player1");
-        const player2 = document.querySelector("#player2");
-        const player3 = document.querySelector("#player3");
-        const player4 = document.querySelector("#player4");
-        const player5 = document.querySelector("#player5");
-        const player6 = document.querySelector("#player6");
-        const player7 = document.querySelector("#player7");
-        const player8 = document.querySelector("#player8");
-        const player9 = document.querySelector("#player9");
-        const player10 = document.querySelector("#player10");
-        const dice = [[5],[1,9],[1,5,9],[1,3,7,9],[1,3,5,7,9],[1,3,4,6,7,9]];
-        button.addEventListener("click", function () {
-            let rolls = [roll(10),roll(10)];
-            let temp;
-            if(rolls[0] == rolls[1]){ temp="Draw"; }            //Start Game Dice Logic
-            else if(rolls[0] > rolls[1]){ temp="Player 1 wins"; } // Adjust Logic For 10 Players Here
-            else { temp="Player 2 wins"; }                      //End Game Dice logic
-            updateOutput(player1,rolls[0]);
-            updateOutput(player2,rolls[1]);
-            updateOutput(player3,rolls[2]);
-            updateOutput(player4,rolls[3]);
-            updateOutput(player5,rolls[4]);
-            updateOutput(player6,rolls[5]);
-            updateOutput(player7,rolls[6]);
-            updateOutput(player8,rolls[7]);
-            updateOutput(player9,rolls[8]);
-            updateOutput(player10,rolls[9]);
-            output.innerHTML = temp;
-        })
-        
-        function updateOutput(el,num){                      //Remove Method
-            let holder = builder(num);
-            if(el.children[0]){el.children[0].remove();}    //Edit So That Losing Players Are Removed
-            el.appendChild(holder);                          //Remove Method
+"use strict"
+var player1;
+var player2;
+var player3;
+var player4;
+var player5;
+var player6;
+var player7;
+var player8;
+var player9;
+var player10;
+
+var counter;
+
+var playerArray = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10];
+
+for (let i = 0; i < playerArray.length; i++){
+    document.getElementById(i).innerHTML = " ";
+    document.getElementById("Rounds").innerHTML = " ";
+    document.getElementById(i + "D").innerHTML = " ";
+}
+
+
+function playRound(){
+if (counter === 5){
+    let winner = finalRound(playerArray);
+    counter++;
+    alert("Game's Over, Partner! " + winner.name + " Won The Draw, Good Shooting. ");
+}
+
+else{
+    if (counter < 6){
+        fullRound(playerArray);
+        counter++;
+    }
+}
+document.getElementById("Rounds").innerHTML = "Round: " + counter;
+}
+
+function fullRound(array){
+for (let i = 0; i < array.length; i++){
+    if (array[i].value === -1){
+        document.getElementById(i).innerHTML = " ";
+        document.getElementById(i + "D").innerHTML = " ";
+    }
+    else{
+        array[i].value = rollDice();
+        if (array[i].value > 0 && i < 10)
+        {
+                document.getElementById(i).innerHTML = array[i].name;
+                document.getElementById(i + "D").innerHTML = array[i].value;
+                
         }
-        
-        function builder(num){
-            let div = document.createElement("div");
-            let dieArray = dice[num-1];
-            console.log(dieArray);
-            for(let x=1;x<10;x++){
-                let span = document.createElement("div");
-                span.setAttribute("class","dot");
-                if(dieArray.includes(x)){
-                    span.classList.add("black");    
-                }
-                div.appendChild(span);
-            }
-            div.setAttribute("class","dice dealer");
-            return div;
-        }
-        
- 
-        function roll(num) {
-            let randomNumber = Math.floor(Math.random() * num) + 1;
-            return randomNumber;
-        }
+    }
+}
+let playersRemoved = comparePlayers(array);
+}
+
+function checkDiceRoll(roll){
+if (roll > 0){
+    return roll;
+}
+}
+
+function rollDice(){
+let player = Math.round((((Math.random() * 4) + 1) + ((Math.random() * 6) + 1) + ((Math.random() * 8) + 1) + ((Math.random() * 10) + 1) + ((Math.random() * 12) + 1) + ((Math.random() * 20) + 1)));
+return player;
+}
+
+function lastRound(array){
+array[0].value = lastRoundRolls();
+array[1].value = lastRoundRolls();
+if (array[0].value === array[1].value){
+    lastRound(array);
+}
+let winner;
+if (array[0].value > array[1].value){
+    winner = array[0];
+}
+else if (array[0].value < array[1].value){
+    winner = array[1];
+}
+return winner;
+}
+
+function comparePlayers(players){
+players.sort(function(a, b) {return b.value-a.value});
+if (counter > -1 && counter < 3){
+    players[(players.length - ((counter * 2) + 1))].value = -1;
+    players[(players.length - ((counter * 2) + 2))].value = -1;
+}
+else if (counter == 3){
+    players[(players.length - ((counter * 2) + 1))].value = -1;
+}
+else if (counter == 4){
+    players[(players.length - (counter * 2))].value = -1;
+    document.getElementById(2).innerHTML = " ";
+    document.getElementById(2 + "d").innerHTML = " ";
+}
+else {
+    players[(players.length - (counter + 1))].value = -1;
+}
+return players;
+}
+
+function lastRoundRolls(){
+let firstRand = Math.round(Math.random() * 20);
+let secondRand = Math.round(Math.random() * 20);
+let thirdRand = Math.round(Math.random() * 20);
+let fourthRand = Math.round(Math.random() * 20);
+let d20 = [firstRand, secondRand, thirdRand, fourthRand]
+var d4 = Math.round(Math.random() * 3);
+let final = d20[d4];
+return final;
+}
