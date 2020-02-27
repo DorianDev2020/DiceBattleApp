@@ -1,30 +1,30 @@
 "use strict"
-var player1;
-var player2;
-var player3;
-var player4;
-var player5;
-var player6;
-var player7;
-var player8;
-var player9;
-var player10;
+var POne;
+var PTwo;
+var PThree;
+var PFour;
+var PFive;
+var PSix;
+var PSeven;
+var PEight;
+var PNine;
+var PTen;
 
 var counter;
 
 var playerArray = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10];
 
 function startGame(){
-    playerOne = {value: 0, name: "HighNoon Yasuo"};
-    playerTwo = {value: 0, name: "HighNoon Caitlyn"};
-    playerThree = {value: 0, name: "HighNoon Thresh"};
-    playerFour = {value: 0, name: "HighNoon Allistar"};
-    playerFive = {value: 0, name: "HighNoon Hecarim"};
-    playerSix = {value: 0, name: "Project: Yi"};
-    playerSeven = {value: 0, name: "Project: Vi"};
-    playerEight = {value: 0, name: "Project: Warwick"};
-    playerNine = {value: 0, name: "Project: Zed"};
-    playerTen = {value: 0, name: "Project: Jinx"};
+    POne = {value: 0, name: "HighNoon Yasuo"};
+    PTwo = {value: 0, name: "HighNoon Caitlyn"};
+    PThree = {value: 0, name: "HighNoon Thresh"};
+    PFour = {value: 0, name: "HighNoon Allistar"};
+    PFive = {value: 0, name: "HighNoon Hecarim"};
+    PSix = {value: 0, name: "Project: Yi"};
+    PSeven = {value: 0, name: "Project: Vi"};
+    PEight = {value: 0, name: "Project: Warwick"};
+    PNine = {value: 0, name: "Project: Zed"};
+    PTen = {value: 0, name: "Project: Jinx"};
 
     counter = 0;
 
@@ -125,5 +125,5 @@ let fourthRand = Math.round(Math.random() * 20);
 let d20 = [firstRand, secondRand, thirdRand, fourthRand]
 var d4 = Math.round(Math.random() * 3);
 let final = d20[d4];
-return final;
+return final;}
 }
